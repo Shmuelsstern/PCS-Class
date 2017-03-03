@@ -6,6 +6,7 @@ module.exports = (req, res, next) => {
     fs.readFile('content/' + path, 'utf-8', (err, data) => {
         if (err) {
         next();
+        return;
         }
         res.end(data);
     });
