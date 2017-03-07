@@ -1,0 +1,51 @@
+Uptime:1713 school 21>db.students.insert([{"first_name":"Sam","last_name":"Samson","address":"10 Downing Street","grade":10},{"first_name":"John","last_name":"Johnon","address":"20 Bowling Street","grade":08},{"first_name":"Jill","last_name":"Jilson","address":"30 Oceanside Street","grade":9},{"first_name":"Jack","last_name":"Jackson","address":"40 Bennett street","grade":6},{"first_name":"Mark","last_name":"Markson","address":"50 Rockefeller Street","grade":10}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+Uptime:1937 school 22>db.students.find({"first_name":"John"})
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193c"), "first_name" : "John", "last_name" : "Johnon", "address" : "20 Bowling Street", "grade" : 8 }
+Uptime:1994 school 23>db.students.find({"first_name":"John"}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+Uptime:2031 school 25>db.students.find({"first_name":"John","grade":5}).pretty()
+Uptime:2044 school 26>use store
+switched to db store
+Uptime:2060 store 27>db.products.insert([{"name":"ipod","price":500},{"name":"ear Buds","price":5.00}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+Uptime:2189 store 28>db/products.find()
+2017-03-06T22:37:08.884-0500 E QUERY    [thread1] ReferenceError: products is not defined :
+@(shell):1:1
+Uptime:2204 store 29>db/products.find({})
+2017-03-06T22:37:14.957-0500 E QUERY    [thread1] ReferenceError: products is not defined :
+@(shell):1:1
+Uptime:2210 store 30>db.products.find()
+{ "_id" : ObjectId("58be2ad4f2e8e67b31881940"), "name" : "ipod", "price" : 500 }
+{ "_id" : ObjectId("58be2ad4f2e8e67b31881941"), "name" : "ear Buds", "price" : 5 }
+Uptime:2273 store 31>db.products.count()
+2
+Uptime:2283 store 32>db.products.delete({})
+2017-03-06T22:38:56.363-0500 E QUERY    [thread1] TypeError: db.products.delete is not a function :
+@(shell):1:1
+Uptime:2312 store 33>db.products.remove({})
+WriteResult({ "nRemoved" : 2 })
