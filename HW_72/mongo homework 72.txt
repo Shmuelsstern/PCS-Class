@@ -1,0 +1,1073 @@
+Uptime:249 school 9>db.students.find()
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193b"), "first_name" : "Sam", "last_name" : "Samson", "address" : "10 Downing Street", "grade" : 10 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193c"), "first_name" : "John", "last_name" : "Johnon", "address" : "20 Bowling Street", "grade" : 8 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193d"), "first_name" : "Jill", "last_name" : "Jilson", "address" : "30 Oceanside Street", "grade" : 9 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193e"), "first_name" : "Jack", "last_name" : "Jackson", "address" : "40 Bennett street", "grade" : 6 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193f"), "first_name" : "Mark", "last_name" : "Markson", "address" : "50 Rockefeller Street", "grade" : 10 }
+Uptime:265 school 10>replacementStudent={}
+{ }
+Uptime:429 school 11>edit replacementStudent
+Uptime:761 school 24>db.students.update({_id:ObjectId("58be29d8f2e8e67b3188193f")},replacementStudent)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+Uptime:767 school 25>db.students.find()
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193b"), "first_name" : "Sam", "last_name" : "Samson", "address" : "10 Downing Street", "grade" : 10 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193c"), "first_name" : "John", "last_name" : "Johnon", "address" : "20 Bowling Street", "grade" : 8 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193d"), "first_name" : "Jill", "last_name" : "Jilson", "address" : "30 Oceanside Street", "grade" : 9 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193e"), "first_name" : "Jack", "last_name" : "Jackson", "address" : "40 Bennett street", "grade" : 6 }
+{ "_id" : ObjectId("58be29d8f2e8e67b3188193f"), "first" : "Donald", "last" : "Smith", "grade" : 2, "address" : "123 Main Ave" }
+Uptime:941 school 27>db.students.update({grade:6},{$set:{grade:7}},{multi:true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+Uptime:1043 school 28>db.students.find()pretty()
+2017-03-20T21:44:09.344-0400 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:18
+Uptime:1059 school 29>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 2,
+        "address" : "123 Main Ave"
+}
+
+ADDED SOME MORE STUDENTS
+
+Uptime:1183 school 32>edit replacementStudent
+
+Uptime:1390 school 33>db.students.insert(replacementStudent)
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 4,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+Uptime:1411 school 34>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 5,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 5,
+        "address" : "432 Main Ave"
+}
+Uptime:1625 school 38>db.students.update({grade:5},{$inc:{grade:1}},{multi:true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+Uptime:1657 school 39>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:1662 school 40>db.students.update({grade:7},{$set:{scores:[95,98,93]}},{multi:true})
+Uptime:1955 school 49>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                95,
+                98,
+                93
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                95,
+                98,
+                93
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:2166 school 53>db.students.update({grade:7},{$push:{scores:{$each:[85,86,87,88,89]}}},{multi:true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+Uptime:2255 school 54>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                95,
+                98,
+                93,
+                85,
+                86,
+                87,
+                88,
+                89
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                95,
+                98,
+                93,
+                85,
+                86,
+                87,
+                88,
+                89
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+HELLO ASHER
+
+Uptime:2524 school 60>db.students.update({grade:7},{$pop:{scores:1}},{multi:true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+Uptime:2528 school 61>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                85,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                85,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:2549 school 62>db.students.update({grade:7},{$pull:{scores:85}},{multi:true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+Uptime:2752 school 63>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:2759 school 64>db.students.find({grade:{$gt:7}}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+Uptime:5720 school 69>db.students.find({grade:{$gt:7},name:'joe'}).pretty()
+Uptime:5732 school 70>
+Uptime:5905 school 71>db.students.find({$or:[{grade:{$gt:7}},{name:'joe'}]}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+Uptime:6155 school 73>db.students.find({grade:{$ne:7}}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:6202 school 74>db.students.find({grade:{$in:[6,7,8]}}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first_name" : "John",
+        "last_name" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:6297 school 75>db.students.find({grade:{$nin:[6,8]}}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193b"),
+        "first_name" : "Sam",
+        "last_name" : "Samson",
+        "address" : "10 Downing Street",
+        "grade" : 10
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first_name" : "Jill",
+        "last_name" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first_name" : "Jack",
+        "last_name" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+Uptime:6344 school 76>db.students.find({grade:{$not:{$gte:7}}}).pretty()
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:7424 school 108>db.students.find().sort({last:1}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first" : "Jack",
+        "last" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first" : "Jill",
+        "last" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first" : "John",
+        "last" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:7651 school 114>db.students.find().sort({last:1}).limit(3).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first" : "Jack",
+        "last" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first" : "Jill",
+        "last" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first" : "John",
+        "last" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+Uptime:7776 school 117>db.students.find().sort({last:1}).skip(3).limit(1).pretty()
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+ db.students.update({first:'Donald'},{$set:{parents:{mother:'Ivanka',father:'Fred'}}},{multi:true})
+WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 2 }
+Uptime:8512 school 140>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first" : "John",
+        "last" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first" : "Jill",
+        "last" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+Uptime:8713 school 146>db.students.update({first:'Donald'},{$set:{parents:{mother:'Ivanka',father:'Fred'}}},{multi:true})
+db.students.update({last:'Smith'},{$set:{parents:{mother:'Hillary',father:'Bill'}}},{multi:true})
+Uptime:8752 school 148>db.students.find().pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193c"),
+        "first" : "John",
+        "last" : "Johnon",
+        "address" : "20 Bowling Street",
+        "grade" : 8
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193d"),
+        "first" : "Jill",
+        "last" : "Jilson",
+        "address" : "30 Oceanside Street",
+        "grade" : 9
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first" : "Jack",
+        "last" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ],
+        "parents" : {
+                "mother" : "Hillary",
+                "father" : "Bill"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave",
+        "parents" : {
+                "mother" : "Ivanka",
+                "father" : "Fred"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave",
+        "parents" : {
+                "mother" : "Hillary",
+                "father" : "Bill"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave",
+        "parents" : {
+                "mother" : "Ivanka",
+                "father" : "Fred"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193e"),
+        "first" : "Jack",
+        "last" : "Jackson",
+        "address" : "40 Bennett street",
+        "grade" : 7,
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ]
+}
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ],
+        "parents" : {
+                "mother" : "Ivanka",
+                "father" : "Fred"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5653"),
+        "first" : "Donald",
+        "last" : "Trump",
+        "grade" : 2,
+        "address" : "1600 Pennsylvania Ave",
+        "parents" : {
+                "mother" : "Ivanka",
+                "father" : "Fred"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave"
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5655"),
+        "first" : "Donald",
+        "last" : "Jones",
+        "grade" : 6,
+        "address" : "432 Main Ave",
+        "parents" : {
+                "mother" : "Ivanka",
+                "father" : "Fred"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5656"),
+        "first" : "Bob",
+        "last" : "Trump",
+        "grade" : 6,
+        "address" : "432 Main Ave"
+}
+Uptime:8942 school 151>db.students.find({'parents.father':'Bill'}).pretty()
+{
+        "_id" : ObjectId("58be29d8f2e8e67b3188193f"),
+        "first" : "Donald",
+        "last" : "Smith",
+        "grade" : 7,
+        "address" : "123 Main Ave",
+        "scores" : [
+                98,
+                93,
+                86,
+                87,
+                88
+        ],
+        "parents" : {
+                "mother" : "Hillary",
+                "father" : "Bill"
+        }
+}
+{
+        "_id" : ObjectId("58d086c95c8612e54fdb5654"),
+        "first" : "Joe",
+        "last" : "Smith",
+        "grade" : 3,
+        "address" : "123 Main Ave",
+        "parents" : {
+                "mother" : "Hillary",
+                "father" : "Bill"
+        }
+}
+ASHER DID YOU REALLY GO THROUGH THE WHOLE THING!?!?
